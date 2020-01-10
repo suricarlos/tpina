@@ -1,11 +1,14 @@
 import React from 'react';
 
+import GlobalStyle from './sytles/global';
+
 function App() {
   return (
-    <div>
+    <>
       <h1>Projeto TPina</h1>
       <p>Encadernaçao Japonesa</p>
-    </div>
+      <GlobalStyle />
+    </>
   );
 }
 
