@@ -13,6 +13,7 @@ export default function Header() {
       <Link to="/">
           <img src={logo} alt="TPina" />
       </Link>
+
       <Logo to="/">
         <GoRepoClone size={36} color="#FFF" />
       </Logo>

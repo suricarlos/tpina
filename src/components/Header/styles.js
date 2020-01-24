@@ -15,10 +15,10 @@ export const Container = styled.header`
   text-decoration: none;
   transition: opacity 0.2s;
   padding: 10px 0 0 0;
+
   &:hover {
     opacity: 0.7;
   }
-
 `;
 
 export const Logo = styled(Link)`
