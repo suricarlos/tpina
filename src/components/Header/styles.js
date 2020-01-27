@@ -10,14 +10,14 @@ export const Container = styled.header`
   border-bottom: 3px dotted #fff;
 
   img {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  transition: opacity 0.2s;
-  padding: 10px 0 0 0;
-
-  &:hover {
-    opacity: 0.7;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: opacity 0.2s;
+    padding: 10px 0 0 0;
+    &:hover {
+      opacity: 0.7;
+    }
   }
 `;
 
