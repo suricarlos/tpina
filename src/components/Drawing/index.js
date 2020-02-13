@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Stage, Layer, Arrow, Circle, Line } from "react-konva";
+import ReactToPrint from "react-to-print";
 
 import { Intro } from './styles'
 
@@ -23,7 +24,7 @@ class ArrowDrawable extends Drawable {
   }
   render() {
     const points = [this.startx, this.starty, this.x, this.y];
-    return <Arrow points={points} fill="white" stroke="white" />;
+    return <Arrow points={points} fill="black" stroke="black" />;
   }
 }
 
@@ -38,7 +39,7 @@ class CircleDrawable extends ArrowDrawable {
     const dy = this.starty - this.y;
     const radius = Math.sqrt(dx * dx + dy * dy);
     return (
-      <Circle radius={radius} x={this.startx} y={this.starty} stroke="white" />
+      <Circle radius={radius} x={this.startx} y={this.starty} stroke="black" />
     );
   }
 }
@@ -52,7 +53,7 @@ class FreePathDrawable extends Drawable {
     this.points = [...this.points, x, y];
   }
   render() {
-    return <Line points={this.points} fill="white" stroke="white" />;
+    return <Line points={this.points} fill="black" stroke="black" />;
   }
 }
 
@@ -159,10 +160,20 @@ class SceneWithDrawables extends Component {
   }
 }
 
-export default function Drawing() {
-  return (
-    <Intro>
-      <SceneWithDrawables />
-    </Intro>
-  )
+class Drawing extends Component {
+  render() {
+    return (
+      <Intro>
+        <div>
+        <ReactToPrint
+          trigger={() => <a href="#">Gerar PDF aqui!</a>}
+          content={() => this.componentRef}
+        />
+        <SceneWithDrawables  ref={el => (this.componentRef = el)} />
+        </div>
+      </Intro>
+    );
+  }
 }
+
+export default Drawing

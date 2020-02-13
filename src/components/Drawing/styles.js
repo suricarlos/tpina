@@ -16,8 +16,9 @@ export const Intro = styled.div`
       color: #fff;
       border: 0;
       overflow: hidden;
-      margin-top: auto;
-      flex: 1;
+      /* margin-top: auto; */
+
+      /* flex: 1; */
       align-items: center;
       transition: background 0.2s;
 
@@ -25,5 +26,24 @@ export const Intro = styled.div`
         background: ${darken(0.03, '#a02c2c')};
       }
   }
+  a {
+  background: #fff;
+  border: 1px solid #a02c2c;
+  color: #000;
+  width: 105px;
+  padding: 2px;
+  position: absolute;
+  left: 400px;
+  bottom: 500px;
+  text-decoration: none;
+  transition: background 0.2s;
+
+    &:hover {
+      background: ${darken(0.03, '#fff')};
+    }
+}
 `;
 
+export const Botao = styled.div`
+
+`
